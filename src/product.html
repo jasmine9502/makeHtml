@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>产品页面</title>
+    <link rel="stylesheet" href="style/product.css">
+
+    </script>
+</head>
+
+<body>
+    <div class="info">
+        <div class="title">
+            <p style="font-size:15px">主标题：</p>
+            <input type="text" id="title" name="title" size="50" maxlength="50">
+            <p class="normal">(文本格式:[[<span style="font-size:15px;font-weight:normal;color:#CD0000">文本</span>]]设红色;**<span style="font-size:15px;">文本</span>** 加粗;_<span style="font-size:15px;font-style: italic">文本</span>_ 斜体)</p>
+            <p class="normal">产品介绍信息:</p>
+            <textarea class="contentInput" id="productInfo" name="productInfo" cols="60" rows="5"></textarea>
+            <div class="coverImg">
+                    <p class="normal">主图片:<span>(放在大标题前,若没有则不需要放置)</span></p>
+                    <input type="file" id="readImg" onchange="showImage(this,'coverImg')" accept="image/*" value="选择图片" />
+                    <input type="button" value="取消该图片" onclick="call('coverImg','readImg');" />
+                    <img id="coverImg" style="border: solid #afafaf 0.8px" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/8.png"/>
+            </div>
+        </div>
+        <p style="font-weight:bolder;color: brown">      注意：图片默认在副标题下方</p>
+        <button class="add" id="add" onclick=addContainer()>添加新段落</button>
+        <div class="content" id="content01">
+            <div class="contentText">
+                <p class="normal">副标题(按需求填写)</p>
+                <textarea class="viceTitle" type="text" id="viceTitle01" cols="60" rows="1"></textarea>
+                <p class="normal">若想显示列表请选择</p>
+                <input type="radio" name="list01" value=".">●   
+                <input type="radio" name="list01" value="。">○   
+                <input type="radio" name="list01" value="1">1.  
+                <input type="radio" name="list01" value="none">不按列表显示<br>
+                <textarea class="contentInput" id="paragraph01" cols="60" rows="15"></textarea>
+                <br>
+                <input style="vertical-align:middle;margin-left:20px"  id="checkbox01" type="checkbox" name="checkbox" />文字添加黄色背景
+            </div>
+            <div class="contentImg">
+                <p class="normal">图片:<span style="font-size: 10px">(希望只显示图片则不用填写文字)</span></p>
+                <input type="file" id="readImg01" onchange="showImage(this,'showImg01')" accept="image/*" value="选择图片" />
+                <input type="button" value="取消该图片" onclick="call('showImg01','readImg01');" />
+                <img id="showImg01" style="border: solid #afafaf 0.8px" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/8.png"/>
+            </div>
+            
+        </div>
+        <input type="submit" class="submit" name="submit" value=" 提交预览 " onclick=submitInfo() />
+    </div>
+    <div class="rightShow">
+        <h3>手机显示效果</h3>
+        <div class="showPage" id="showPage">
+            <div class="topLogo">
+                <img src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/7.png">
+            </div>
+            <img class="showCoverImg" id="showCoverImg" src="images/占位.png">
+            <h1 id="showTitle">标题</h1>
+            <div class="infoBorder1" id="infoBorder1">
+                <div class="infoBorder2" id="infoBorder2">
+                    <p id="showProductInfo" class="showProductInfo">放置产品信息介绍<br><br></p>
+                </div>
+            </div>
+            <div class="showModule" id="showModule">
+                <div class="show" id="show01">
+                <div class="showViceBorder" id= "showViceBorder01">
+                <p class="showViceTitle" id="showViceTitle01">副标题(没有则无需填写)</p>
+                </div>
+                <p class="showContent" id="showContent01">填充文本</p>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="createFile" name="createFile" value="生成网页" onclick=upLoadData() />
+        <p class="result"></p>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://lsservice.leicacloud.com:1201/WebpageTemplate/marked.min.js"></script>
+    <script src="js/product.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻页面</title>
+    <!-- 引入 WeUI -->
+    <!--<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>-->
+    <link rel="stylesheet" href="style/news.css">
+</head>
+
+<body>
+    <button class="loadLast" onclick=loadLastFormat()>加载上次保存的样式</button>
+    <button class="showGlobal" onclick=showGlobal()>设置全局样式</button>
+    <div class="info" id="info">
+        <div class="title">
+            <p style="font-size:15px">主标题：</p>
+            <input type="text" id="title" name="title" size="50" maxlength="50">
+            <input type="checkbox" class="dateCheckbox" id="dateCheckbox" checked="true"> 是否显示当前日期<br> 
+            <span style=" font-weight: normal;margin-left:335px">自设日期:(YYYY-MM-DD)</span><input type="text" id="date" size="20" maxlength="20">
+            <p style="font-size:15px;margin-top:-10px">来源(默认徕卡测量系统)：</p>
+            <input type="text" id="comeFrom" size="20" maxlength="20">
+            <p>请选择标题靠左，居中，靠右（默认靠左）</p>
+            <input class="fontAbout" type="radio" name="loc" value="left">靠左   <input type="radio" name="loc" value="center">居中   <input type="radio" name="loc" value="right"> 靠右
+            <p>请选择标题字体(默认Segoe UI)</p>
+            <!-- 别忘了调整成window适用字体 -->
+            <input type="radio" name="font" value="Segoe UI">Segoe UI   <input type="radio" name="font" value="STHeiti">黑体   <input type="radio" name="font" value="STSong"> 宋体
+            <div class="aa" id="aa">
+            <p>点击输入框选取 <span style="font-weight: bolder">标题</span> 颜色</p>
+            <input type="text" class="pickTextColor" id="titleColor" value="#333333" size="8">
+            <p class="normal">(文本格式:[[<span style="font-size:15px;font-weight:normal;color:#CD0000">文本</span>]]设红色;**<span style="font-size:15px;">文本</span>** 加粗;_<span style="font-size:15px;font-style: italic">文本</span>_ 斜体)</p>
+            </div>
+        </div>
+        <p style="font-weight:bolder;color: brown">       注意：图片默认在文字下方</p>
+        <button class="add" id="add" onclick=addContainer()>添加新段落</button>
+        <div class="content" id="content01">
+            <div class="contentText">
+                <p>副标题(按需求填写)</p>
+                <textarea class="viceTitle" type="text" id="viceTitle01" name="viceTitle01" cols="60" rows="1"></textarea>
+                <div class="pickVTColor">
+                    <p>点击输入框选取颜色(副标题)</p>
+                    <input type="text" class="pickTextColor" id="viceTitleColor01" value="#333333" size="8">
+                    <p>请选择副标题靠左，居中(默认靠左)</p>
+                    <input type="radio" name="viceLoc01" value="left">靠左   <input type="radio" name="viceLoc01" value="center">居中
+                </div>
+                <textarea class="contentInput" id="paragraph01" name="paragraph01" cols="60" rows="15"></textarea>
+            </div>
+            <div class="contentImg">
+                <p>图片:<span style="font-size: 10px">(希望只显示图片则不用填写文字)</span></p>
+                <input type="file" id="readImg01" onchange="showImage(this,'showImg01')" accept="image/*" value="选择图片" />
+                <input type="button" value="取消该图片" onclick="call('showImg01','readImg01');" />
+                <img id="showImg01" style="border: solid #afafaf 0.8px" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/8.png"/>
+                <p>图片小标题(图片下方)</p>
+                <textarea class="imgTitle" type="text" id="imgTitle01" name="imgTitle01" cols="30" rows="1"></textarea>
+                <div class="pickColor">
+                    <div class="pickColorL">
+                        <p><span>文字颜色</span></p>
+                        <input type="text" class="pickTextColor" id="textColor01" value="#333333" size="8">
+                    </div>
+                    <div class="pickColorR">
+                        <p><span>文字背景颜色</span></p>
+                        <input type="text" class="pickTextColor" id="bgColor01" value="#ffffff" size="8">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" class="checkbox" id="checkbox"> 是否在尾部显示公司LOGO<br>
+        <span><p style="margin-left:60px;padding-top:10px;">撰稿人：<input type="text" id="writer" size="40" maxlength="40"></p></span>
+        <input type="submit" class="submit" name="submit" value=" 提交预览 " onclick=submitInfo() />
+        
+    </div>
+    <div class="rightShow">
+        <h3>手机显示效果</h3>
+        <div class="showPage" id="showPage">
+            <div class="showReal" id="showReal">
+                <h1 id="showTitle">标题</h1>
+                <p class="showDate" id="showDate">2018-12-04<span> <a href="http://mp.weixin.qq.com/s?__biz=MzA5NjA2NDU3Nw==&amp;mid=201256384&amp;idx=1&amp;sn=0857211a423506c6c7ade66c8fde0f51#rd" style="color: #607fa6;font-size: 1em;" target="_blank">    徕卡测量系统</a></span></p>
+                <div class="show" id="show01">
+                    <p class="showViceTitle" id="showViceTitle01">副标题</p>
+                    <p class="showContent" id="showContent01">内容</p>
+                   <!--<div class="showImageDiv" id="showImgDiv01">
+                        <img class="showImage" id="showImage01" />
+                    </div> -->
+                    <p class="showImgTitle" id= "showImgTitle01"></p>
+                </div>
+            </div>
+            <div class="bottom" id="bottom">
+                <div class="logo">
+                    <img class="logoImage" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/6.png" id="logoImage" />
+                </div>
+                <div class="contact">
+                    <div class="info-top">
+                        <div class="littleLeft">
+                            <img class="littleLogo" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/5.png ">
+                        </div>
+                        <div class="littleRight">
+                            <p style="font-size:0.9em;margin-left:-1px;text-align:left;line-height: 15px;">点击徕卡测量系统官网查看更多信息</p>
+                            <a href="https://www.leica-geosystems.com.cn">www.leica-geosystems.com.cn</a>
+                        </div>
+                    </div>
+                    <div class="info-bottom">
+                        <div class="littleLeft">
+                            <img class="littleLogo" src="https://lsservice.leicacloud.com:1201/WebpageTemplate/Image/4.png ">
+                        </div>
+                        <div class="littleRight">
+                            <p style="font-size:0.9em;margin-left:-1px;text-align:left;line-height: 15px;">点击徕卡AppStore查看在线销售商品</p>
+                            <a href="http://www.leica-geosystems.com.cn/shopping/">http://www.leica-geosystems.com.cn/shopping/</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="writer"></p>
+        </div>
+        <input type="submit" class="createFile" name="createFile" value="生成网页" onclick=upLoadData() />
+        <p class="result"></p>
+    </div>
+    <div class="showSet">
+            <button class="setClose" onclick=setClose()>X</button>
+            <h1>请选择字体颜色</h1>
+            <p>标题颜色:</p>
+            <input type="text" class="pickTextColor" id="TitleColor" value="#333333" size="8">
+            <p>副标题颜色:</p>
+            <input type="text" class="pickTextColor" id="viceTColor" value="#333333" size="8">
+            <p>文本颜色:</p>
+            <input type="text" class="pickTextColor" id="TColor" value="#333333" size="8">
+            <p>文本背景颜色:</p>
+            <input type="text" class="pickTextColor" id="BColor" value="#ffffff" size="8">
+            <button class="setGlobal" onclick=setGlobal()>确认设置</button>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.minicolors.js"></script>
+    <link rel="stylesheet" href="style/jquery.minicolors.css">
+    <script src="https://lsservice.leicacloud.com:1201/WebpageTemplate/marked.min.js"></script>
+    <script src="js/news.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#titleColor").minicolors();
+            $("#textColor01").minicolors();
+            $("#bgColor01").minicolors();
+            $("#viceTitleColor01").minicolors();
+            $("#TitleColor").minicolors();
+            $("#viceTColor").minicolors();
+            $("#TColor").minicolors();
+            $("#BColor").minicolors();
+        });
+        
+    </script>
+</body>
+
+</html>

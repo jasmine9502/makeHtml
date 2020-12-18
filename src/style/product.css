@@ -1,0 +1,286 @@
+.info {
+    float: left;
+    margin:0 10px 10px 10px;
+}
+.title{
+    margin-top:30px;
+    margin-left: 30px;
+}
+
+img { background-color: #fff; }
+
+a {
+    color: #1a1a1a;
+    font-size: 8px;
+    margin-top: -5px;
+}
+
+h1{
+    font-size: 18px;
+    text-align: left;
+    color:#ff0033;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    white-space: pre-wrap;
+    /*margin-bottom: 8px;*/
+    margin-top: 8px;
+}
+
+.normal {
+    font-size: 15px;
+}
+
+ul, ol,menu, dir {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 0;
+    line-height: 10px;
+}
+
+span {
+    font-weight: bolder;
+}
+
+.contentImg{
+    margin-left:20px;
+    padding-top:10px;
+}
+
+.coverImg input{
+    display:block;
+    margin-bottom: 20px;
+}
+.coverImg img {
+    width: 98px;
+    height: 98px;
+    margin-top:-10px;
+}
+
+.viceTitle {
+    display: block;
+    margin-bottom:10px;
+}
+
+.content{
+    overflow: hidden;
+    margin-top:15px;
+    margin-left:30px;
+    border: dashed #4dd0e1 1px;
+    padding: 5px;
+}
+
+.contentInput{
+    margin-top:10px;
+}
+
+.delete {
+    display: block;
+    margin-top:365px;
+    margin-left:10px;
+    color: brown;
+}
+
+.contentImg input{
+    display:block;
+    margin-bottom: 20px;
+}
+
+.contentText{
+    float: left;
+}
+
+.contentText p {
+    font-size: 14px;
+}
+
+.contentImg{
+    float: right;
+    margin-left:40px;
+    padding-top:0;
+}
+
+.contentImg img {
+    width: 98px;
+    height: 98px;
+    margin-top:-10px;
+}
+
+.contentImg input{
+    display:block;
+    margin-top:-5px;
+}
+
+.checkbox {
+    display: block;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+/*添加文字图片模块*/
+.add {
+    display: inline-block;
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(0,151,167,0.85);
+    font-weight: bolder;
+    color: azure;
+    outline:0; 
+    border-radius: 40px;
+}
+
+.submit{
+    display: inline-block;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(0,151,167,0.85);
+    font-weight: bolder;
+    color: azure;
+    outline:0;
+    border-radius: 40px;
+}
+
+.rightShow{
+    position:fixed;
+    right: 20px;
+    top:10px;
+    float:right;
+}
+
+.showPage{
+    overflow: scroll;
+    width:320px;
+    height: 560px;
+    padding: 0 8px;
+    border:solid;
+    border-color: #4dd0e1;
+    margin-bottom: 30px
+}
+
+.showModule {
+    margin-bottom: 10px;
+}
+
+.topLogo {
+    width: 100%;
+    height: 56px;;
+}
+
+.topLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.showCoverImg {
+    width: 100%;
+}
+
+.show {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.showContent {
+    margin: 10px 5px 0 5px;
+    display: block;
+    word-wrap:break-word;
+    word-break:break-all;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.showContent p {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.showImageDiv {
+    overflow: hidden;
+    width: 100%;
+    margin-top:5px;
+}
+
+.infoBorder1 {
+    width: 100%;
+    border: solid;
+    border-width: 0.8px;
+    border-color: rgb(241, 140, 136);
+    height: auto;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+
+.infoBorder2 {
+    width: 99%;
+    border: solid;
+    border-width: 0.8px;
+    border-color: rgb(241, 140, 136);
+    height: auto;
+    margin: 2px auto;
+    border-radius: 9px;
+}
+
+.showViceBorder {
+    width: 95%;
+    height: auto;
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 0px 0px 0.5px 5px;
+    border-right: 0;
+    border-top: 0;
+    border-color: rgb(197, 36, 36);
+    margin: 5px auto;
+}
+
+.showViceBorder p {
+    font-weight: bolder;
+    margin-left: 5px;
+    font-size:13px;
+}
+
+.showProductInfo{
+    display: block;
+    font-size: 12px;
+    margin: 15px 15px 0 15px;
+}
+
+.showImage {
+    width: 98%;
+    height: auto;
+    margin:5px 3px;;
+}
+
+.createFile {
+    display: inline-block;
+    margin:5px 0;
+    width: 100px;
+    height: 40px;
+    background: #00acc1;
+    color: azure;
+    outline:0;
+    border-radius: 10px;
+}
+.result {
+    display: block;
+    position: fixed;
+    right: 5px;
+    top:650px;
+    font-size: 12px;
+    width:250px;
+    height: 60px;
+    word-wrap:break-word;
+    word-break:break-all;
+}

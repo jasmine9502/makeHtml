@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人作品</title>
+    <link rel="stylesheet" href="style/review.css">
+    <link rel="stylesheet" href="style/personal.css">
+    <script src="https://lsservice.leicacloud.com:1201/WebpageTemplate/marked.min.js"></script>
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/personal.js"></script>
+    <script type="text/javascript"> 
+        window.onload = function(){ 
+            LoadPersonalNewsTable();
+    }   
+    </script>
+</head>
+
+<body>
+    <button class="back" onclick="javascript:history.go(-1)">返回新建界面</button>
+    <button class="refreshbtn" onclick="refresh()">刷新列表</button>
+        <div class="left">
+        <div class="buttonOutter">
+                <ul id="tabs">
+                        <li class="current"><a href="#" title="tab1">新闻页面</a></li>
+                        <li><a href="#" title="tab2">产品页面</a></li>
+                </ul>
+        </div>
+        <div class="tableth">
+                        <table border="1" cellspacing="0">
+                                <thead>
+                                        <tr>
+                                                <th style="width:240px">文件名</th>
+                                                <th style="width:110px">发布人</th>
+                                                <th style="width:232px">操作</th>
+                                        </tr>
+                                </thead>
+                        </table>
+        </div>
+        <div class="table">
+                        <table border="1" cellspacing="0">
+                                <tbody id="tbody"></tbody>
+                        </table>
+        </div>
+        </div>
+        <div class="right">
+                <h3>手机显示效果</h3>
+                <div class="showPage" id="showPage">
+                </div>
+        </div>
+</body>
+
+</html>

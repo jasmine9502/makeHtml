@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择模版</title>
+    <link rel="stylesheet" href="style/choose.css">
+
+</head>
+
+<body>
+   <button style="display: inline-block; font-size: 15px;margin-left:0;margin-top:0; width:100px;height:30px;" onclick="logout()">退出登陆</button> 
+   <button style="display: inline-block; font-size: 15px;margin-left:30px;margin-top:0; width:100px;height:30px;" onclick="personal()" >个人作品</button>
+    <h1>请选择要生成页面的类型</h1>
+    <div class="news">
+        <button class="newsAdd" id="newsAdd" onclick="newNews()">新建新闻页面</button>
+        <div class="newsImage">
+        <p>新闻页面样式预览</p>
+        <img calss="newsImg" src="images/新闻.jpg">
+        </div>
+    </div>
+    <div class="product">
+        <button class="productAdd" onclick="newProduct()">新建产品页面</button>
+        <div class="productImage">
+        <p>产品页面样式预览</p>
+        <img src="images/productSimple1.png">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/choose.js"></script>
+</body>
+
+</html>
